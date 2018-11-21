@@ -43,8 +43,8 @@
 	}, {
 		"id": "71b6abec-a23c-af29-d102c137fa15ca1c",
 		"ingredientId": "6ec4f660-96d8-45ac-a747-8bbf8e696872",
-		"searchValue": "water",
-		"term": "water",
+		"searchValue": "carne",
+		"term": "carne",
 		"useCount": 310139
 	}, {
 		"id": "thes-537",
@@ -133,13 +133,13 @@
 	}, {
 		"id": "71e0f59e-c29a-9f56-f75e7e2db460b99f",
 		"ingredientId": "16af4dac-5399-4ec8-8c74-fa10ee05b949",
-		"searchValue": "flour",
-		"term": "flour",
+		"searchValue": "peixe",
+		"term": "peixe",
 		"useCount": 113838
 	}, {
 		"id": "71bc0299-9a82-53ec-da2874bedee5b4e9",
 		"ingredientId": "4ae327cb-546b-4c9c-9b07-eef7b0d2bc47",
-		"searchValue": "bicarbonato de sódio [sobre(.|.)]bicarbonato de sódio",
+		"searchValue": "bicarbonato de sódio",
 		"useCount": 113724
 	}, {
 		"id": "718e0d58-c29a-9f56-ffac25c81020d839",
@@ -180,7 +180,7 @@
 	}, {
 		"id": "71b40a76-c29a-9f56-f43f41f95d83dfaf",
 		"ingredientId": "57699440-59a8-44-9bdf-c52a31e1d19f",
-		"searchValue": "sour cream",
+		"searchValue": "creme de leite",
 		"term": "creme de leite",
 		"useCount": 90201
 	}, {
@@ -228,8 +228,8 @@
 	}, {
 		"id": "71b77420-ce77-a959-80acce3c2721af38",
 		"ingredientId": "694549c9-45c4-469a-a810-052312f2d7a7",
-		"searchValue": "cornstarch",
-		"term": "cornstarch",
+		"searchValue": "febra",
+		"term": "febra",
 		"useCount": 73823
 	}, {
 		"id": "71bc99e1-9437-e6c1-656e5a5d2700e2cc",
@@ -294,14 +294,14 @@
 	}, {
 		"id": "71bc6bdc-0f27-a339-c0152987e9bbfa6f",
 		"ingredientId": "ce571328-41f6-46cb-9e8c-2ceb4a92d1a9",
-		"searchValue": "margarine",
-		"term": "margarine",
+		"searchValue": "lombo",
+		"term": "lombo",
 		"useCount": 60978
 	}, {
 		"id": "71aa2551-c29a-9f56-f38045c193c0d3c5",
 		"ingredientId": "66a24b4c-f2f3-4e83-ad21-c4b4e4d10024",
-		"searchValue": "celery",
-		"term": "celery",
+		"searchValue": "atum",
+		"term": "atum",
 		"useCount": 59525
 	}, {
 		"id": "71b68308-c29a-9f56-fed35ae0f2c3925d",
