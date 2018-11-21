@@ -30,11 +30,11 @@ public class Main {
                 JSONObject ingredient = (JSONObject) root.get(i);
                 //Get the name
                 String name = (String) ingredient.get("searchValue");
-                ingredients.add(name);
+                ingredients.add(name.toLowerCase());
                 //Add plural version
                 name = name.trim();
                 name += "s";
-                ingredients.add(name);
+                ingredients.add(name.toLowerCase());
                 System.out.println("Now adding ingredients (" + (i+1) + "/" + root.size() + ")");
             }
 
