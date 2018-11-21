@@ -4,6 +4,7 @@ import org.json.simple.parser.JSONParser;
 
 import javax.xml.bind.SchemaOutputResolver;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 
 public class Main {
@@ -28,7 +29,12 @@ public class Main {
             for (int i=0; i<size; i++){
                 JSONObject ingredient = (JSONObject) root.get(i);
                 //Get the name
-                ingredients.add((String) ingredient.get("searchValue"));
+                String name = (String) ingredient.get("searchValue");
+                ingredients.add(name);
+                //Add plural version
+                name = name.trim();
+                name += "s";
+                ingredients.add(name);
                 System.out.println("Now adding ingredients (" + (i+1) + "/" + root.size() + ")");
             }
 
@@ -36,7 +42,7 @@ public class Main {
             obj = parser.parse(new FileReader("receitas.json"));
             root = (JSONArray) obj;
 
-            size = 200;
+            size = root.size();
             System.out.println("Now finding ingredient in recipe (0/" + root.size() + ")");
 
             for (int i=0; i<size; i++){
@@ -50,20 +56,26 @@ public class Main {
                     //Tokenize array
                     String[] tokens = element.split(" ");
                     //For each token, check if it exists in ingredients
-                    ArrayList<String> newList = new ArrayList<>();
+                    JSONArray newList = new JSONArray();
                     for (String s:tokens){
-                        if (ingredients.contains(s)){
-                            newList.add(s);
+                        if (ingredients.contains(s.toLowerCase())){
+                            newList.add(s.toLowerCase());
                         }
                     }
 
                     //Add to the recipe if not empty
                     if (!newList.isEmpty()){
-                        ingredientsObj.put("ingredientes", newList.toArray());
+                        ingredientsObj.put("ingredientes", newList);
                     }
                 }
                 ingredients.add((String) recipe.get("searchValue"));
                 System.out.println("Now finding ingredient in recipe (" + (i+1) + "/" + root.size() + ")");
+            }
+
+            try (FileWriter file = new FileWriter("receitas.json"))
+            {
+                file.write(root.toString());
+                System.out.println("Successfully updated json object to file...!!");
             }
 
         } catch (Exception e) {
