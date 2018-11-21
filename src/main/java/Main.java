@@ -59,14 +59,30 @@ public class Main {
                     JSONArray newList = new JSONArray();
                     for (String s:tokens){
                         if (ingredients.contains(s.toLowerCase())){
+                            if (!newList.contains(s.toLowerCase())){
+                                newList.add(s.toLowerCase());
+                            }
+                        }
+                    }
+
+                    //Now start grouping words from tokens
+                    ArrayList<String> tokensGrouped = new ArrayList<>();
+                    for (int a=0; a<tokens.length; a++){
+                        for (int b=a; b<tokens.length; b++){
+                            String temp = element.substring(a, b);
+                            tokensGrouped.add(temp);
+                        }
+                    }
+
+                    //Check if anything exists in ingredients
+                    for (String s:tokensGrouped){
+                        if (ingredients.contains(s.toLowerCase())){
                             newList.add(s.toLowerCase());
                         }
                     }
 
-                    //Add to the recipe if not empty
-                    if (!newList.isEmpty()){
-                        ingredientsObj.put("ingredientes", newList);
-                    }
+                    //Add to the recipe (even if empty)
+                    ingredientsObj.put("ingredientes", newList);
                 }
                 ingredients.add((String) recipe.get("searchValue"));
                 System.out.println("Now finding ingredient in recipe (" + (i+1) + "/" + root.size() + ")");
